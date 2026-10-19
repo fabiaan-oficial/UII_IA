@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UII AI Assistant - Red Neuronal MLPClassifier</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: #eef2f5; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 15px; }
+        
+        .chat-container {
+            width: 100%; max-width: 850px; height: 90vh; background: #ffffff;
+            border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+            display: flex; flex-direction: column; overflow: hidden;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #002F6C, #0056b3); color: white;
+            padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;
+        }
+
+        .header-brand { display: flex; align-items: center; gap: 15px; }
+
+        .avatar {
+            width: 45px; height: 45px; background: #ffffff; color: #002F6C;
+            border-radius: 50%; display: flex; justify-content: center; align-items: center;
+            font-size: 22px; font-weight: bold;
+        }
+
+        .header-info h2 { font-size: 18px; font-weight: 700; }
+        .header-info p { font-size: 12px; opacity: 0.85; }
+
+        .tab-buttons { display: flex; gap: 8px; }
+        .tab-btn {
+            background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
+            color: white; padding: 8px 14px; border-radius: 20px; cursor: pointer;
+            font-size: 12px; font-weight: 600; transition: background 0.3s;
+        }
+        .tab-btn.active, .tab-btn:hover { background: #ffffff; color: #002F6C; }
+
+        .tab-content { flex: 1; display: none; flex-direction: column; overflow: hidden; }
+        .tab-content.active { display: flex; }
+
+        .chat-messages {
+            flex: 1; padding: 20px; overflow-y: auto; background: #f8f9fa;
+            display: flex; flex-direction: column; gap: 12px;
+        }
+
+        .message { max-width: 80%; padding: 12px 16px; border-radius: 14px; font-size: 14px; line-height: 1.4; }
+        .bot-message { background: #ffffff; color: #1a1a1a; align-self: flex-start; border-left: 4px solid #002F6C; box-shadow: 0 2px 6px rgba(0,0,0,0.06); }
+        .user-message { background: #002F6C; color: #ffffff; align-self: flex-end; }
+        
+        .meta-info { display: flex; justify-content: space-between; font-size: 10px; margin-top: 6px; color: #666; font-weight: 600; gap: 10px; }
+        .badge-intencion { background: #e2e8f0; color: #002F6C; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+
+        .chat-input-area { padding: 15px; background: #ffffff; border-top: 1px solid #e0e0e0; display: flex; gap: 10px; }
+        .chat-input-area input { flex: 1; padding: 12px 18px; border: 1px solid #cccccc; border-radius: 25px; outline: none; font-size: 14px; }
+        .chat-input-area button { background: #002F6C; color: white; border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; font-size: 16px; }
+
+        .analytics-container { padding: 20px; overflow-y: auto; background: #f8f9fa; flex: 1; }
+        .grid-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-bottom: 20px; }
+        .stat-card { background: white; padding: 14px; border-radius: 12px; border-left: 4px solid #002F6C; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+        .stat-card h4 { font-size: 10px; color: #666; text-transform: uppercase; margin-bottom: 5px; }
+        .stat-card p { font-size: 20px; font-weight: bold; color: #002F6C; }
+
+        .section-title { font-size: 14px; font-weight: bold; color: #002F6C; margin: 15px 0 10px 0; }
+        .intentions-list { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+        .intent-tag { background: #ffffff; border: 1px solid #cbd5e1; padding: 8px 12px; border-radius: 8px; font-size: 12px; display: flex; justify-content: space-between; gap: 10px; }
+        .vocab-box { background: #ffffff; border: 1px solid #cbd5e1; padding: 12px; border-radius: 10px; font-family: monospace; font-size: 11px; color: #334155; max-height: 120px; overflow-y: auto; }
+    </style>
+</head>
+<body>
+
+<div class="chat-container">
+    <div class="chat-header">
+        <div class="header-brand">
+            <div class="avatar"><i class="fas fa-brain"></i></div>
+            <div class="header-info">
+                <h2>UII AI Assistant</h2>
+                <p>Red Neuronal MLPClassifier • BoW (80/20 Train-Test)</p>
+            </div>
+        </div>
+        <div class="tab-buttons">
+            <button class="tab-btn active" onclick="switchTab('chat')"><i class="fas fa-comments"></i> Chat IA</button>
+            <button class="tab-btn" onclick="switchTab('analytics')"><i class="fas fa-network-wired"></i> Red Neuronal & BoW</button>
+        </div>
+    </div>
+
+    <!-- Pestaña 1: Chat Principal -->
+    <div id="chatTab" class="tab-content active">
+        <div class="chat-messages" id="chatBox">
+            <div class="message bot-message">
+                ¡Hola! Soy el asistente virtual del Instituto Irapuato impulsado por una Red Neuronal (MLPClassifier). ¿En qué te puedo ayudar hoy?
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="userInput" placeholder="Escribe tu pregunta..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- Pestaña 2: Demostración Red Neuronal, Métricas y BoW -->
+    <div id="analyticsTab" class="tab-content">
+        <div class="analytics-container">
+            <div class="section-title"><i class="fas fa-brain"></i> Métricas de Evaluación de la Red Neuronal (Parte A, B, C)</div>
+            <div class="grid-stats">
+                <div class="stat-card">
+                    <h4>Exactitud (Accuracy Test)</h4>
+                    <p id="statAccuracy">100.0%</p>
+                </div>
+                <div class="stat-card">
+                    <h4>X_train (80%)</h4>
+                    <p id="statXTrain">84 muestras</p>
+                </div>
+                <div class="stat-card">
+                    <h4>X_test (20%)</h4>
+                    <p id="statXTest">21 muestras</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Modelo DL</h4>
+                    <p style="font-size:16px;">MLP (Perceptrón)</p>
+                </div>
+            </div>
+
+            <div class="section-title"><i class="fas fa-database"></i> Datos de Bag of Words & Intenciones</div>
+            <div class="grid-stats">
+                <div class="stat-card">
+                    <h4>Total Registros</h4>
+                    <p id="statRegistros">105</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Intenciones Creadas</h4>
+                    <p id="statIntenciones">7</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Vocabulario Extraído</h4>
+                    <p id="statVocab">187 palabras</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Matriz Frecuencia</h4>
+                    <p id="statMatriz">(105, 187)</p>
+                </div>
+            </div>
+
+            <div class="section-title"><i class="fas fa-tags"></i> Distribución por Intenciones (y_train / y_test)</div>
+            <div class="intentions-list" id="intentionsContainer"></div>
+
+            <div class="section-title"><i class="fas fa-code"></i> Muestra Vocabulario (CountVectorizer)</div>
+            <div class="vocab-box" id="vocabContainer">Cargando...</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function switchTab(tab) {
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+        if (tab === 'chat') {
+            document.querySelectorAll('.tab-btn')[0].classList.add('active');
+            document.getElementById('chatTab').classList.add('active');
+        } else {
+            document.querySelectorAll('.tab-btn')[1].classList.add('active');
+            document.getElementById('analyticsTab').classList.add('active');
+            loadAnalytics();
+        }
+    }
+
+    async function sendMessage() {
+        const input = document.getElementById('userInput');
+        const text = input.value.trim();
+        if (!text) return;
+
+        const chatBox = document.getElementById('chatBox');
+        const userDiv = document.createElement('div');
+        userDiv.className = 'message user-message';
+        userDiv.innerText = text;
+        chatBox.appendChild(userDiv);
+
+        input.value = '';
+        chatBox.scrollTop = chatBox.scrollHeight;
+
+        const response = await fetch('/predict', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ pregunta: text })
+        });
+
+        const data = await response.json();
+
+        const botDiv = document.createElement('div');
+        botDiv.className = 'message bot-message';
+        botDiv.innerHTML = data.respuesta + `
+            <div class="meta-info">
+                <span>Intención: <strong class="badge-intencion">${data.intencion}</strong></span>
+                <span>Confianza MLP: ${data.confianza}%</span>
+            </div>`;
+        chatBox.appendChild(botDiv);
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    async function loadAnalytics() {
+        const res = await fetch('/analytics');
+        const data = await res.json();
+
+        document.getElementById('statAccuracy').innerText = data.metricas_red_neuronal.accuracy + '%';
+        document.getElementById('statXTrain').innerText = data.metricas_red_neuronal.train_samples + ' muestras';
+        document.getElementById('statXTest').innerText = data.metricas_red_neuronal.test_samples + ' muestras';
+
+        document.getElementById('statRegistros').innerText = data.total_registros;
+        document.getElementById('statIntenciones').innerText = data.total_intenciones;
+        document.getElementById('statVocab').innerText = data.tamano_vocabulario + ' palabras';
+        document.getElementById('statMatriz').innerText = `(${data.total_registros}, ${data.tamano_vocabulario})`;
+
+        const intContainer = document.getElementById('intentionsContainer');
+        intContainer.innerHTML = '';
+        for (const [key, val] of Object.entries(data.intenciones)) {
+            intContainer.innerHTML += `
+                <div class="intent-tag">
+                    <span><strong>${key}</strong></span>
+                    <span style="color:#002F6C; font-weight:bold;">${val} ejemplos</span>
+                </div>`;
+        }
+
+        document.getElementById('vocabContainer').innerText = data.vocabulario.join(' • ');
+    }
+
+    function handleKeyPress(e) { if (e.key === 'Enter') sendMessage(); }
+</script>
+
+</body>
+</html>

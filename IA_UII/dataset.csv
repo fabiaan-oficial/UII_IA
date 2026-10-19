@@ -1,0 +1,128 @@
+texto,intencion
+Hola,saludo
+Buenos días,saludo
+Buenas tardes,saludo
+Buenas noches,saludo
+Hola qué tal,saludo
+Hola buenos días,saludo
+Qué tal,saludo
+Hola asistente,saludo
+Hola UII,saludo
+Saludos,saludo
+Hola hola,saludo
+Buenos días asistente,saludo
+Qué tal buenos días,saludo
+Hola cómo estás,saludo
+Buenas tardes asistente,saludo
+¿Cómo me inscribo?,inscripciones
+¿Cuáles son los requisitos de inscripción?,inscripciones
+¿Qué necesito para ingresar al Instituto Irapuato?,inscripciones
+Requisitos para nuevo ingreso,inscripciones
+¿Cuándo son las inscripciones?,inscripciones
+¿Cómo es el proceso de admisión?,inscripciones
+¿Dónde entrego mis documentos para la inscripción?,inscripciones
+¿Qué papeles piden para inscribirme?,inscripciones
+Quiero inscribirme a la licenciatura,inscripciones
+¿Dónde me doy de alta como alumno?,inscripciones
+Proceso de inscripción de nuevo ingreso,inscripciones
+¿Cómo hago mi ficha de admisión?,inscripciones
+¿Dónde trámite mi ingreso?,inscripciones
+Pasos para inscribirme en la universidad,inscripciones
+¿Cuándo abren las inscripciones?,inscripciones
+¿Cómo solicito una beca?,becas
+¿Qué apoyos económicos hay?,becas
+¿Cuáles son los tipos de becas disponibles?,becas
+Requisitos para tramitar la beca institucional,becas
+¿Cuándo sale la convocatoria de becas?,becas
+¿Dónde pido la beca académica?,becas
+¿Hay becas por promedio?,becas
+¿Cómo mantengo mi beca?,becas
+¿Dónde entrego los papeles de la beca?,becas
+Apoyo económico para colegiatura,becas
+¿Dónde tramito el descuento de beca?,becas
+¿Hay becas deportivas o culturales?,becas
+¿Cuándo dan los resultados de la beca?,becas
+Porcentaje de descuento en becas,becas
+¿Cómo solicito el estudio socioeconómico para beca?,becas
+¿Dónde consulto mis horarios?,horarios
+¿A qué hora tengo clase?,horarios
+¿Dónde veo mi tira de materias?,horarios
+¿Cuándo salen los horarios de clases?,horarios
+¿Dónde checo mi carga académica?,horarios
+¿Cuál es mi rol de exámentes?,horarios
+¿Dónde consulto el horario del semestre?,horarios
+¿A qué hora empiezan las clases?,horarios
+¿Dónde veo la tira de materias?,horarios
+Ver mi horario de materias,horarios
+¿Dónde reviso mis horarios de laboratorio?,horarios
+¿Dónde checo los salones y horarios?,horarios
+Horarios de clases de mi grupo,horarios
+¿Cuándo es el inicio de clases?,horarios
+¿Dónde consulto las fechas de exámenes parciales?,horarios
+¿Cómo solicito una constancia de estudios?,servicios_escolares
+¿Dónde hago un trámite escolar?,servicios_escolares
+¿Dónde tramito mi credencial de estudiante?,servicios_escolares
+¿Cómo repongo mi credencial de alumno?,servicios_escolares
+¿Dónde pido un historial académico o boleta?,servicios_escolares
+¿Cómo solicito la baja de una materia?,servicios_escolares
+¿Dónde solicito un certificado parcial?,servicios_escolares
+¿Cuándo entregan las boletas de calificaciones?,servicios_escolares
+¿Dónde está la oficina de Servicios Escolares?,servicios_escolares
+Trámite de constancia con calificaciones,servicios_escolares
+¿Dónde reviso mis notas del parcial?,servicios_escolares
+¿Dónde tramito mi servicio social?,servicios_escolares
+¿Cómo justifico una falta con servicios escolares?,servicios_escolares
+¿Dónde pido el sello de mi credencial?,servicios_escolares
+¿Cómo solicito la titulación?,servicios_escolares
+¿Dónde se paga la colegiatura?,pagos
+¿Qué día del mes se realiza el pago?,pagos
+¿Cuándo es la fecha límite para pagar colegiatura?,pagos
+¿Dónde realizo el pago de la ficha?,pagos
+¿Cómo puedo pagar en línea la colegiatura?,pagos
+¿Dónde puedo pagar la reinscripción?,pagos
+¿Qué días se paga la mensualidad?,pagos
+dónde puedo pagar,pagos
+en donde puedo pagar la colegiatura,pagos
+en donde se puede pagar la colegiatura,pagos
+dónde realizo la transferencia de colegiatura,pagos
+¿Se puede pagar con tarjeta en el aula escolar?,pagos
+¿Cuándo se paga la reinscripción del semestre?,pagos
+donde pago la colegiatura,pagos
+¿Hay recargo por pagar después del día 10?,pagos
+¿Dónde está el edificio de colores?,ubicacion
+¿Dónde queda el edificio de colores?,ubicacion
+donde esta ubicado el edificio de colores,ubicacion
+y en donde se encuentra el edificio de colores,ubicacion
+en donde queda el edificio de colores,ubicacion
+¿Dónde está la caja de cobro?,ubicacion
+¿Ubicación de servicios escolares?,ubicacion
+¿Dónde se encuentra la biblioteca?,ubicacion
+¿Dónde está la cafetería del campus?,ubicacion
+¿Dónde queda el estacionamiento de alumnos?,ubicacion
+¿Cómo llego al campus central?,ubicacion
+¿En qué edificio está la dirección académica?,ubicacion
+¿Dónde están las canchas deportivas?,ubicacion
+¿Dónde se encuentra el laboratorio de cómputo?,ubicacion
+¿En qué edificio pago mi colegiatura?,ubicacion
+¿dónde puedo ir a pagar mi colegiatura?,pagos
+"¿dónde está el edificio de colores?""",ubicacion
+"""hola buenos días asistente""",saludo
+"""¿cómo solicito una beca o apoyo económico?""",becas
+"""¿cuáles son los requisitos de ingreso?""",inscripciones
+"""¿dónde puedo checar mi tira de materias?""",horarios
+"""¿cómo tramito una constancia de estudios?""",servicios_escolares
+"""¿dónde pago la colegiatura?""",pagos
+"""¿dónde se encuentra el edificio de colores?""",ubicacion
+"""¿cuándo sale el camión a León?""",becas
+¿cómo tramito una constancia de estudios?,servicios_escolares
+¿dónde pago la colegiatura?,pagos
+¿dónde se encuentra el edificio de colores?,ubicacion
+¿cuándo sale el camión a León?,becas
+¿cómo puedo solicitar una beca?,becas
+hola buenos dias,saludo
+¿cuáles son los requisitos para inscribirme?,inscripciones
+¿dónde puedo checar mi tira de materias?,horarios
+¿dónde se tramita una constancia de estudios?,servicios_escolares
+¿dónde pago la colegiatura de la universidad?,pagos
+¿puedo pagar con tarjeta de débito?,pagos
+cuando se paga colegiatura,pagos
