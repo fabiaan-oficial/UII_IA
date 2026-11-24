@@ -1,8 +1,11 @@
+import os
+import csv
 import sqlite3
 import json
 from datetime import datetime
 
 DB_NAME = "asistente.db"
+CSV_DESCONOCIDAS = "desconocidas.csv"
 
 def conectar():
     return sqlite3.connect(DB_NAME)
@@ -42,6 +45,11 @@ def crear_tablas():
     conn.commit()
     conn.close()
 
+    if not os.path.exists(CSV_DESCONOCIDAS):
+        with open(CSV_DESCONOCIDAS, "w", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f)
+            writer.writerow(["fecha", "hora", "pregunta", "intencion_mas_probable", "confianza"])
+
 def cargar_base_conocimiento(ruta_json="datos/respuestas.json"):
     with open(ruta_json, "r", encoding="utf-8") as archivo:
         datos = json.load(archivo)
@@ -77,8 +85,13 @@ def registrar_consulta(pregunta, intencion_predicha, confianza):
     conn.commit()
     conn.close()
 
-def registrar_desconocida(pregunta):
-    fecha_hora = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+def registrar_desconocida(pregunta, intencion_mas_probable, confianza):
+    ahora = datetime.now()
+    fecha = ahora.strftime("%Y-%m-%d")
+    hora = ahora.strftime("%H:%M:%S")
+    fecha_hora = f"{fecha} {hora}"
+
+    # Guardar en SQLite
     conn = conectar()
     cursor = conn.cursor()
     cursor.execute("""
@@ -87,3 +100,8 @@ def registrar_desconocida(pregunta):
     """, (fecha_hora, pregunta))
     conn.commit()
     conn.close()
+
+    # Guardar en desconocidas.csv (Paso 4)
+    with open(CSV_DESCONOCIDAS, "a", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow([fecha, hora, pregunta, intencion_mas_probable, round(confianza, 2)])
