@@ -1,0 +1,30 @@
+{
+  "saludo": {
+    "respuesta": "¡Hola! Soy el Asistente Virtual del Instituto Irapuato. ¿En qué trámite o duda universitaria te puedo ayudar hoy?",
+    "fuente": "Portal Institucional UII - Bienvenida"
+  },
+  "becas": {
+    "respuesta": "Para tramitar o renovar becas (académicas, deportivas o socioeconómicas), debes acudir al Departamento de Atención a Alumnos y Becas o revisar la convocatoria vigente en el portal escolar.",
+    "fuente": "Reglamento General de Becas UII"
+  },
+  "inscripciones": {
+    "respuesta": "Las inscripciones y reinscripciones se realizan en Control Escolar presentando tu comprobante de pago, tira de materias autorizada y documentación vigente.",
+    "fuente": "Calendario Escolar y Control Escolar UII"
+  },
+  "horarios": {
+    "respuesta": "Puedes consultar tu horario de clases y tira de materias ingresando con tu matrícula al Sistema de Gestión Escolar en línea.",
+    "fuente": "Plataforma Académica UII"
+  },
+  "servicios_escolares": {
+    "respuesta": "En Servicios Escolares puedes solicitar constancias de estudio, kárdex oficial, certificados parciales y trámites de credencial.",
+    "fuente": "Catálogo de Trámites - Servicios Escolares UII"
+  },
+  "pagos": {
+    "respuesta": "Los pagos de colegiatura y trámites administrativos se realizan mediante ficha referenciada en ventanilla bancaria, transferencia o directamente en Caja de la universidad.",
+    "fuente": "Departamento de Finanzas y Caja UII"
+  },
+  "ubicacion": {
+    "respuesta": "El campus del Instituto Irapuato se ubica en Av. Lázaro Cárdenas #1915. Las oficinas administrativas y Control Escolar están en el edificio principal.",
+    "fuente": "Directorio y Mapa del Campus UII"
+  }
+}
