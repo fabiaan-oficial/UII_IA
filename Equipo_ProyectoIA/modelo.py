@@ -16,5 +16,11 @@ class ModeloAsistente:
         indice = probabilidades.argmax()
         intencion_probable = str(self.modelo.classes_[indice])
 
-        es_desconocida = max_prob < self.umbral_confianza
+        # Se rechaza si el modelo la reconoce como ajena al instituto, si no está
+        # seguro, o si el texto no tiene nada parecido a lo aprendido
+        es_desconocida = (
+            intencion_probable == "fuera_de_alcance"
+            or max_prob < self.umbral_confianza
+            or X_nuevo.nnz == 0
+        )
         return intencion_probable, max_prob * 100, es_desconocida

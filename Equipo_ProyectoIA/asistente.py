@@ -1,3 +1,5 @@
+import json
+import pandas as pd
 from flask import Flask, render_template, request, jsonify
 import base_datos as bd
 from modelo import ModeloAsistente
@@ -28,8 +30,8 @@ def predict():
     if es_desconocida:
         bd.registrar_desconocida(pregunta, intencion_probable, confianza)
         respuesta_texto = (
-            f"No comprendí bien tu consulta (Confianza: {confianza:.2f}%, bajo el umbral). "
-            f"Intención más cercana: '{intencion_probable}'. Guardada en desconocidas.csv."
+            "Lo siento, no tengo información sobre eso. Puedo ayudarte con inscripciones, becas, "
+            "horarios, pagos, trámites de servicios escolares y la ubicación del campus."
         )
         fuente = "Sistema de Respaldo (Fallback)"
     else:
@@ -45,19 +47,32 @@ def predict():
         "response": respuesta_texto,
         "respuesta": respuesta_texto,
         "intent": intencion_final,
+        "intencion": intencion_final,
         "confidence": round(confianza, 2),
+        "confianza": round(confianza, 2),
         "fuente": fuente
     })
 
 @app.route("/analytics")
 def analytics():
+    with open("datos/metricas.json", "r", encoding="utf-8") as archivo:
+        metricas = json.load(archivo)
+
+    df = pd.read_csv("datos/dataset.csv").dropna()
+    conteo_intenciones = df["intencion"].value_counts().to_dict()
+    # Si el vectorizador combina palabras y letras, se muestra solo la parte de palabras
+    vectorizador = ia.vectorizador
+    if hasattr(vectorizador, "transformer_list"):
+        vectorizador = vectorizador.transformer_list[0][1]
+    vocabulario = vectorizador.get_feature_names_out().tolist()
+
     return jsonify({
-        "metricas_red_neuronal": {
-            "accuracy": 92.86,
-            "train_samples": 108,
-            "test_samples": 28
-        },
-        "vocabulario": list(ia.vectorizador.get_feature_names_out())[:40]
+        "metricas_red_neuronal": metricas,
+        "total_registros": len(df),
+        "total_intenciones": len(conteo_intenciones),
+        "intenciones": conteo_intenciones,
+        "tamano_vocabulario": len(vocabulario),
+        "vocabulario": vocabulario[:40]
     })
 
 if __name__ == "__main__":
