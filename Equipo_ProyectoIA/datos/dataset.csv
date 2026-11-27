@@ -105,33 +105,246 @@ en donde queda el edificio de colores,ubicacion
 ¿Dónde se encuentra el laboratorio de cómputo?,ubicacion
 ¿En qué edificio pago mi colegiatura?,ubicacion
 ¿dónde puedo ir a pagar mi colegiatura?,pagos
-"¿dónde está el edificio de colores?""",ubicacion
-"""hola buenos días asistente""",saludo
-"""¿cómo solicito una beca o apoyo económico?""",becas
-"""¿cuáles son los requisitos de ingreso?""",inscripciones
-"""¿dónde puedo checar mi tira de materias?""",horarios
-"""¿cómo tramito una constancia de estudios?""",servicios_escolares
-"""¿dónde pago la colegiatura?""",pagos
-"""¿dónde se encuentra el edificio de colores?""",ubicacion
-"""¿cuándo sale el camión a León?""",becas
-¿cómo tramito una constancia de estudios?,servicios_escolares
-¿dónde pago la colegiatura?,pagos
-¿dónde se encuentra el edificio de colores?,ubicacion
-¿cuándo sale el camión a León?,becas
-¿cómo puedo solicitar una beca?,becas
-hola buenos dias,saludo
-¿cuáles son los requisitos para inscribirme?,inscripciones
+hola buenos días asistente,saludo
+¿cómo solicito una beca o apoyo económico?,becas
+¿cuáles son los requisitos de ingreso?,inscripciones
 ¿dónde puedo checar mi tira de materias?,horarios
+¿cómo tramito una constancia de estudios?,servicios_escolares
+¿dónde se encuentra el edificio de colores?,ubicacion
+¿cuándo sale el camión a León?,fuera_de_alcance
+¿cómo puedo solicitar una beca?,becas
+¿cuáles son los requisitos para inscribirme?,inscripciones
 ¿dónde se tramita una constancia de estudios?,servicios_escolares
 ¿dónde pago la colegiatura de la universidad?,pagos
 ¿puedo pagar con tarjeta de débito?,pagos
 cuando se paga colegiatura,pagos
-donde esta el camion de leon,ubicacion
+donde esta el camion de leon,fuera_de_alcance
 donde encuentro al coordinador de sistemas,ubicacion
 donde encue tro al jefe de la carrera de sistemas,ubicacion
 becas,becas
 horarios,horarios
 en donde esa mi tira de materias,horarios
 dame el horario de emilio escobedo,horarios
-donde encuengtro la iglesia dentro del instituto,pagos
+donde encuengtro la iglesia dentro del instituto,ubicacion
 dame opciones de beca,becas
+¿Qué becas ofrece la universidad?,becas
+¿Cómo pido mi kárdex oficial?,servicios_escolares
+Métodos de pago para trámites escolares,pagos
+¿Dónde está Control Escolar?,ubicacion
+¿A qué hora abren caja para pagar?,pagos
+Buen día a todos,saludo
+"Buenos días, buen día",saludo
+Hola buen día,saludo
+Que tengas buen día,saludo
+"Hola, qué onda",saludo
+Qué onda asistente,saludo
+Holi,saludo
+Holaa,saludo
+Hola buenas,saludo
+Buenas,saludo
+Muy buenos días,saludo
+Hola muy buenas noches,saludo
+Hey,saludo
+Hey qué tal,saludo
+Saludos asistente,saludo
+"Hola, ¿cómo te va?",saludo
+Qué hay,saludo
+Buenas buenas,saludo
+Fecha de inscripción,inscripciones
+Fechas de inscripciones y reinscripciones,inscripciones
+Cuáles son las fechas de admisión,inscripciones
+Información sobre inscripciones,inscripciones
+Informes de admisión,inscripciones
+Quiero información para ingresar,inscripciones
+Quiero estudiar en la UII,inscripciones
+Quiero entrar a estudiar una carrera,inscripciones
+Cómo entro a la universidad,inscripciones
+Qué hago para estudiar ahí,inscripciones
+Cómo me reinscribo,inscripciones
+Reinscripción al siguiente semestre,inscripciones
+Requisitos de admisión,inscripciones
+Documentos de nuevo ingreso,inscripciones
+Qué documentos debo llevar para inscribirme,inscripciones
+Hay inscripciones abiertas,inscripciones
+Cómo apartar mi lugar en la carrera,inscripciones
+Quiero ser alumno del instituto,inscripciones
+Examen de admisión,inscripciones
+Inscripción a la licenciatura,inscripciones
+Hay becas disponibles,becas
+Tienen algún apoyo para estudiantes,becas
+Necesito una beca,becas
+Me interesa una beca,becas
+Información de becas,becas
+Informes sobre becas,becas
+Becas socioeconómicas,becas
+Beca deportiva,becas
+Beca académica,becas
+Renovación de beca,becas
+Quiero renovar mi beca,becas
+Qué promedio piden para beca,becas
+Descuentos por buen promedio,becas
+Descuento en la colegiatura por beca,becas
+Pueden apoyarme con una beca,becas
+Convocatoria de becas,becas
+Requisitos de la beca,becas
+Mi horario,horarios
+Quiero ver mi horario,horarios
+Saber mi horario de clases,horarios
+A qué hora entro,horarios
+A qué hora salgo de clases,horarios
+A qué hora es mi materia,horarios
+No sé mi horario,horarios
+Descargar tira de materias,horarios
+Imprimir mi tira de materias,horarios
+Qué materias llevo este semestre,horarios
+Qué materias me tocan,horarios
+Horario del semestre,horarios
+Horario cuatrimestral,horarios
+Horario de mi carrera,horarios
+Cuándo inician las clases,horarios
+Cuándo entramos a clases,horarios
+Calendario de exámenes,horarios
+Fecha de los exámenes finales,horarios
+Necesito mi kárdex,servicios_escolares
+Quiero sacar mi kardex,servicios_escolares
+Solicitar kárdex,servicios_escolares
+Constancia de estudios,servicios_escolares
+Necesito una constancia de alumno,servicios_escolares
+Perdí mi credencial de estudiante,servicios_escolares
+Reposición de credencial,servicios_escolares
+Se me extravió la credencial,servicios_escolares
+Certificado de estudios,servicios_escolares
+Quiero mi certificado,servicios_escolares
+Boleta de calificaciones,servicios_escolares
+Necesito mis calificaciones oficiales,servicios_escolares
+Quiero titularme,servicios_escolares
+Dar de baja una materia,servicios_escolares
+Baja temporal,servicios_escolares
+Liberación de servicio social,servicios_escolares
+Trámites de servicios escolares,servicios_escolares
+Cómo pago mi mensualidad,pagos
+Formas de pagar la colegiatura,pagos
+Métodos de pago,pagos
+Qué formas de pago aceptan,pagos
+Aceptan tarjeta de crédito,pagos
+Aceptan pagos con tarjeta,pagos
+Puedo pagar en efectivo,pagos
+Pago por transferencia bancaria,pagos
+Hacer una transferencia para pagar,pagos
+Pagar en caja,pagos
+Pagar la inscripción en caja,pagos
+Dónde está el pago de mi inscripción,pagos
+Hasta cuándo puedo pagar,pagos
+Fecha límite de pago,pagos
+Hay recargos por pagar tarde,pagos
+Me cobran extra si me atraso en el pago,pagos
+Si pago tarde hay multa,pagos
+Generar ficha de pago,pagos
+Referencia bancaria para pagar,pagos
+Horario de caja,pagos
+A qué hora puedo pagar en caja,pagos
+Dónde está el instituto,ubicacion
+Dónde se ubica la universidad,ubicacion
+Dónde queda la UII,ubicacion
+En dónde está el Instituto Irapuato,ubicacion
+Dirección de la universidad,ubicacion
+Dirección del instituto,ubicacion
+Cuál es la dirección del campus,ubicacion
+Me das la dirección,ubicacion
+Cómo llegar a la universidad,ubicacion
+Cómo llego a la escuela,ubicacion
+Ubicación del campus,ubicacion
+Ubicación de la universidad,ubicacion
+Mapa del campus,ubicacion
+Dónde está el edificio principal,ubicacion
+En qué parte está la biblioteca,ubicacion
+Ubicación de la biblioteca,ubicacion
+Dónde queda la cafetería,ubicacion
+Dónde está Control Escolar en el campus,ubicacion
+Dónde están las oficinas administrativas,ubicacion
+Dónde está la iglesia dentro del instituto,ubicacion
+A qué hora sale el camión a León,fuera_de_alcance
+Cuándo sale el camión,fuera_de_alcance
+Horario del autobús a Celaya,fuera_de_alcance
+Qué ruta de transporte me lleva a Guanajuato,fuera_de_alcance
+Cuánto cuesta el pasaje,fuera_de_alcance
+Cuánto cuesta un boleto de avión,fuera_de_alcance
+Precio de un vuelo a Cancún,fuera_de_alcance
+Quiero reservar un hotel,fuera_de_alcance
+Cuánto cuesta viajar a Guadalajara,fuera_de_alcance
+Receta para hacer tacos,fuera_de_alcance
+Cómo se cocina el arroz,fuera_de_alcance
+Cómo hacer un pastel,fuera_de_alcance
+Receta de enchiladas,fuera_de_alcance
+Quiero pedir comida a domicilio,fuera_de_alcance
+Pídeme una hamburguesa,fuera_de_alcance
+Recomiéndame un restaurante,fuera_de_alcance
+Quién ganó el partido de fútbol,fuera_de_alcance
+Quién va a ganar el campeonato,fuera_de_alcance
+Resultados de la liga mx,fuera_de_alcance
+Te gustan los deportes,fuera_de_alcance
+Quién es el mejor futbolista del mundo,fuera_de_alcance
+Recomiéndame una película,fuera_de_alcance
+Qué película de terror veo,fuera_de_alcance
+Dónde ver series en línea,fuera_de_alcance
+Recomiéndame música,fuera_de_alcance
+Ponme una canción,fuera_de_alcance
+Quién canta esa canción,fuera_de_alcance
+Cuéntame algo gracioso,fuera_de_alcance
+Dime un chiste,fuera_de_alcance
+Cuéntame una historia,fuera_de_alcance
+Escríbeme un poema,fuera_de_alcance
+Cuál es la capital de Italia,fuera_de_alcance
+Cuál es la capital de Japón,fuera_de_alcance
+Dónde queda París,fuera_de_alcance
+Cuál es el río más largo del mundo,fuera_de_alcance
+Quién descubrió América,fuera_de_alcance
+Quién es el gobernador del estado,fuera_de_alcance
+Quién ganó las elecciones,fuera_de_alcance
+Qué opinas de la política,fuera_de_alcance
+Noticias de hoy,fuera_de_alcance
+Cómo va a estar el clima,fuera_de_alcance
+Va a llover hoy,fuera_de_alcance
+Qué temperatura hace,fuera_de_alcance
+Qué hora es en Japón,fuera_de_alcance
+Qué día es hoy,fuera_de_alcance
+Cuánto es dos más dos,fuera_de_alcance
+Resuelve esta multiplicación,fuera_de_alcance
+Cuánto es 100 entre 5,fuera_de_alcance
+Hazme la tarea de matemáticas,fuera_de_alcance
+Cuánto está el dólar,fuera_de_alcance
+Precio del bitcoin,fuera_de_alcance
+En qué invierto mi dinero,fuera_de_alcance
+Cuánto cuesta un iPhone,fuera_de_alcance
+Dónde compro ropa,fuera_de_alcance
+Me siento enfermo qué medicina tomo,fuera_de_alcance
+Me duele el estómago,fuera_de_alcance
+Qué hago si tengo gripa,fuera_de_alcance
+Consejos para bajar de peso,fuera_de_alcance
+Mi computadora no prende,fuera_de_alcance
+Cómo formateo mi teléfono,fuera_de_alcance
+Cómo descargo videos de YouTube,fuera_de_alcance
+Cómo hackear un wifi,fuera_de_alcance
+Cuál es tu color favorito,fuera_de_alcance
+Tienes novia,fuera_de_alcance
+Cuántos años tienes,fuera_de_alcance
+Me quiero casar contigo,fuera_de_alcance
+Eres tonto,fuera_de_alcance
+No sirves para nada,fuera_de_alcance
+Cuál es el sentido de la vida,fuera_de_alcance
+Qué signo zodiacal eres,fuera_de_alcance
+Dame el número de la lotería,fuera_de_alcance
+Cómo cuidar a mi perro,fuera_de_alcance
+Cómo aprendo a tocar guitarra,fuera_de_alcance
+Dónde está el centro comercial,fuera_de_alcance
+Dónde hay un cine cerca,fuera_de_alcance
+Dónde queda el hospital más cercano,fuera_de_alcance
+Cómo saco mi licencia de conducir,fuera_de_alcance
+Cómo tramito mi pasaporte,fuera_de_alcance
+Cómo saco mi credencial para votar,fuera_de_alcance
+Quiero dar de baja una asignatura,servicios_escolares
+Trámite para darme de baja de una materia,servicios_escolares
+Baja de materias,servicios_escolares
+De cuánto es el recargo,pagos
+Cuánto es la multa por pago atrasado,pagos
+Cobran recargo en la colegiatura,pagos

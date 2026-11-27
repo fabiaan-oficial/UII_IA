@@ -1,0 +1,67 @@
+texto,intencion
+holaa buenas,saludo
+buen día,saludo
+qué onda,saludo
+hola buenas noches asistente,saludo
+muy buenas tardes,saludo
+hey hola,saludo
+qué necesito para meterme a estudiar ahí,inscripciones
+quiero entrar a la universidad qué hago,inscripciones
+fechas para inscribirse,inscripciones
+como hago mi reinscripcion,inscripciones
+qué documentos piden para entrar,inscripciones
+me quiero inscribir en una carrera,inscripciones
+información de admisiones,inscripciones
+tienen becas,becas
+quiero una beca,becas
+qué promedio necesito para la beca,becas
+como renuevo mi beca,becas
+hay descuentos para estudiantes destacados,becas
+me pueden apoyar con una beca deportiva,becas
+info sobre becas socioeconomicas,becas
+a qué hora entro a clases,horarios
+quiero saber mi horario,horarios
+donde descargo mi tira de materias,horarios
+qué materias me tocan este semestre y a qué hora,horarios
+horario del cuatrimestre,horarios
+cuando empiezan las clases,horarios
+no sé a qué hora es mi clase,horarios
+necesito una constancia,servicios_escolares
+como saco mi kardex,servicios_escolares
+perdí mi credencial,servicios_escolares
+quiero pedir un certificado de estudios,servicios_escolares
+trámite de titulación,servicios_escolares
+necesito mi boleta de calificaciones,servicios_escolares
+cómo doy de baja una materia,servicios_escolares
+cómo pago la colegiatura,pagos
+aceptan tarjeta,pagos
+formas de pago,pagos
+hasta qué día puedo pagar la mensualidad,pagos
+puedo hacer transferencia,pagos
+quiero pagar mi inscripción en caja,pagos
+me cobran recargos si pago tarde,pagos
+dónde está la universidad,ubicacion
+cuál es la dirección,ubicacion
+como llego al instituto,ubicacion
+en donde queda el campus,ubicacion
+dónde está la biblioteca,ubicacion
+ubicación de la cafetería,ubicacion
+donde queda el edificio principal,ubicacion
+a qué hora pasa el camión para Salamanca,fuera_de_alcance
+cómo se prepara el pozole,fuera_de_alcance
+quién ganó el mundial,fuera_de_alcance
+recomiéndame una serie,fuera_de_alcance
+cuánto cuesta un vuelo a Monterrey,fuera_de_alcance
+qué clima va a hacer mañana,fuera_de_alcance
+cuéntame un chiste,fuera_de_alcance
+cuál es la capital de Francia,fuera_de_alcance
+quiero pedir una pizza,fuera_de_alcance
+cuánto es 25 por 4,fuera_de_alcance
+quién es el presidente de México,fuera_de_alcance
+dónde puedo ver películas gratis,fuera_de_alcance
+precio del dólar hoy,fuera_de_alcance
+me duele la cabeza qué tomo,fuera_de_alcance
+asdfghjkl,fuera_de_alcance
+12345,fuera_de_alcance
+te gusta el futbol,fuera_de_alcance
+cómo arreglo mi celular,fuera_de_alcance
